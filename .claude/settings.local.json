@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(az vm image list:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

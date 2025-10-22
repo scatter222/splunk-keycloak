@@ -1,0 +1,37 @@
+# Copy this file to terraform.tfvars and customize the values
+
+# Resource Group and Location
+resource_group_name = "rg-splunk-auth-lab"
+location            = "eastus" # Change to your preferred region
+
+# VM Configuration
+vm_name = "vm-splunk-auth"
+vm_size = "Standard_D4s_v3" # 4 vCPUs, 16GB RAM
+
+# Admin Credentials
+admin_username = "azureuser"
+admin_password = "YourSecurePassword123!" # Not recommended - use SSH keys instead
+
+# SSH Key (recommended)
+# Paste your public key here or leave as null to use ~/.ssh/id_rsa.pub
+ssh_public_key = null
+
+# Storage
+os_disk_size_gb = 128
+
+# Network Security - IMPORTANT: Restrict these to your IP!
+allowed_ssh_ips = [
+  "0.0.0.0/0" # CHANGE THIS to your IP address, e.g., "1.2.3.4/32"
+]
+
+allowed_http_ips = [
+  "0.0.0.0/0" # CHANGE THIS to your IP address, e.g., "1.2.3.4/32"
+]
+
+# Tags
+tags = {
+  Environment = "Lab"
+  Project     = "SplunkAuth"
+  Purpose     = "SSO-Testing"
+  Owner       = "YourName" # Add your name
+}
